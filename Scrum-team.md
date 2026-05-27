@@ -10,4 +10,8 @@ Notér dem her i filen, og tilknyt en beskrivelse af hver rolle.
 • Afklarer brugerbehov
 
 # SCRUM master:
+Tim
 # Developers:
+Jonas
+Hassan
+Mathias
