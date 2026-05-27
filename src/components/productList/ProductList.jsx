@@ -20,11 +20,10 @@ export default function ProductList() {
 
               setProducts(data)
               
-              console.log(products)
-              setLoading(false)
-              
             } catch (error) {
                 setError(error)
+            } finally {
+                setLoading(false)
             }
     }
 
@@ -32,8 +31,21 @@ export default function ProductList() {
         fetchProducts()
     }, [])
 
+    console.log(products[0])
 
     return (
-        <h1>ProductList</h1>
+        <div className={styles.wrapper}>
+            <h2>Vores Produkter</h2>
+            <h3>Vi har udvalgt de bedste produkter</h3>
+            <p>Her finder du et udvalg af friske mejeriprodukter og kvalitetskød fra Gowala Farms - direkte fra gården til dit bord.</p>
+            <div className={styles.productsWrapper}>
+                <div className={styles.productsGrid}>
+
+                </div>
+                <div className={styles.productsCarousel}>
+                    <p></p>
+                </div>
+            </div>
+        </div>
     )
 }
