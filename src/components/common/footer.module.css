@@ -1,0 +1,96 @@
+.certRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  background: #f2f6f4;
+  padding: 2rem 0 1.5rem 0;
+  border-radius: 0 0 12px 12px;
+  margin-bottom: 1.5rem;
+}
+.certRow img {
+  height: 100px;
+  width: auto;
+  background: #fff;
+  border-radius: 50%;
+  border: 2px solid #e0e0e0;
+  box-shadow: 0 2px 8px #0001;
+  padding: 0.5rem 1.2rem;
+}
+.footer {
+  background: #f7faf7;
+  border-top: 2px solid #e0e0e0;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  color: #222;
+  font-size: 1rem;
+}
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 0 2rem;
+}
+.about {
+  max-width: 350px;
+}
+.logo {
+  width: 80px;
+  margin-bottom: 1rem;
+}
+.contact {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+.certificates {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.certificates img {
+  width: 80px;
+  height: auto;
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid #e0e0e0;
+  padding: 0.5rem;
+}
+
+.sponsors {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0 0 0;
+}
+.sponsors img {
+  width: 90px;
+  height: auto;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  padding: 0.5rem;
+  box-shadow: 0 2px 8px #0001;
+}
+.bottom {
+  margin-top: 2rem;
+  text-align: center;
+  position: relative;
+}
+.cows {
+  background: url("/src/assets/backgrounds/footer-cows.png") bottom center/cover
+    no-repeat;
+  height: 120px;
+  margin-bottom: 1rem;
+}
+.copyright {
+  color: #222;
+  font-size: 0.95rem;
+}
+.brand {
+  color: #6db33f;
+  font-weight: bold;
+}
