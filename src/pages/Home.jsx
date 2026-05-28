@@ -7,7 +7,6 @@ export default function Home() {
     <>
       <ProductList />
       <Newsletter />
-      <Footer />
     </>
   );
 }
