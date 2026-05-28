@@ -1,4 +1,3 @@
-import { CurrencyBitcoin } from "react-bootstrap-icons";
 import Button from "../button/Button";
 import styles from "./productList.module.css"
 import { useEffect, useState } from "react";
@@ -119,7 +118,7 @@ export default function ProductList() {
           </div>
         </div>
         <div className={styles.btnWrapper}>
-            <Button text="Se alle produkter"/>
+            <Button path="products" text="Se alle produkter"/>
         </div>
       </div>
     );
