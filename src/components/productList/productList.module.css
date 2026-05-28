@@ -2,6 +2,9 @@
     max-width: 1240px;
     margin: 0 auto;
     padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     @media (width <= 1200px) {
         margin-inline: 20px;
@@ -119,6 +122,10 @@
 
 .active {
     background-color: #5E9A13;
+}
+
+.btnWrapper {
+    margin-top: 50px;
 }
 
 @media (width <= 1000px) {

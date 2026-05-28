@@ -85,24 +85,41 @@ export default function ProductList() {
           </div>
           <div className={styles.productsCarousel}>
             <div className={styles.carouselInfo}>
-                {products[carouselIndex]?.discount > 5 && (
-                  <p className={styles.pDiscount}>{products[carouselIndex]?.discount}%</p>
-                )}
-                <img
-                  className={styles.pImg}
-                  src={products[carouselIndex]?.image}
-                  alt={products[carouselIndex]?.title}
-                />
-                <h3 className={styles.pTitle}>{products[carouselIndex]?.title}</h3>
-                <p className={styles.pPrice}>{products[carouselIndex]?.price},-</p>
+              {products[carouselIndex]?.discount > 5 && (
+                <p className={styles.pDiscount}>
+                  {products[carouselIndex]?.discount}%
+                </p>
+              )}
+              <img
+                className={styles.pImg}
+                src={products[carouselIndex]?.image}
+                alt={products[carouselIndex]?.title}
+              />
+              <h3 className={styles.pTitle}>
+                {products[carouselIndex]?.title}
+              </h3>
+              <p className={styles.pPrice}>
+                {products[carouselIndex]?.price},-
+              </p>
             </div>
             <div className={styles.dots}>
-              <div className={`${styles.dot} ${carouselIndex === 0 && styles.active}`}></div>
-              <div className={`${styles.dot} ${carouselIndex === 1 && styles.active}`}></div>
-              <div className={`${styles.dot} ${carouselIndex === 2 && styles.active}`}></div>
-              <div className={`${styles.dot} ${carouselIndex === 3 && styles.active}`}></div>
+              <div
+                className={`${styles.dot} ${carouselIndex === 0 && styles.active}`}
+              ></div>
+              <div
+                className={`${styles.dot} ${carouselIndex === 1 && styles.active}`}
+              ></div>
+              <div
+                className={`${styles.dot} ${carouselIndex === 2 && styles.active}`}
+              ></div>
+              <div
+                className={`${styles.dot} ${carouselIndex === 3 && styles.active}`}
+              ></div>
             </div>
           </div>
+        </div>
+        <div className={styles.btnWrapper}>
+            <Button text="Se alle produkter"/>
         </div>
       </div>
     );
