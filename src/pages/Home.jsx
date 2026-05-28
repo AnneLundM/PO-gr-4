@@ -1,6 +1,6 @@
 import ProductList from "../components/productList/ProductList";
-import Newsletter from "../components/common/Newsletter";
-import Footer from "../components/common/Footer";
+import Newsletter from "../components/newsletter/Newsletter";
+import Footer from "../components/footer/Footer";
 
 export default function Home() {
   return (
