@@ -3,9 +3,11 @@ import cards from "./cards.json";
 
 export default function Services() {
   return (
-    <section>
-      <h1>Den førende mælkeproducent</h1>
-      <h1>Sund og nærende mælk siden 1975</h1>
+    <section className={s.main}>
+      <div className={s.header}>
+        <h1 className={s.titl_1}>Den førende mælkeproducent</h1>
+        <h1 className={s.titl_2}>Sund og nærende mælk siden 1975</h1>
+      </div>
       <ul>
         {cards.map((card, index) => (
           <li key={index}>

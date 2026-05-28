@@ -5,8 +5,8 @@ import Newsletter from "../components/newsletter/Newsletter";
 export default function Home() {
   return (
     <>
-      <ProductList />
       <Services />
+      <ProductList />
       <Newsletter />
     </>
   );
