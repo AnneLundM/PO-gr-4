@@ -1,0 +1,47 @@
+.newsletterSection {
+  background: #f7faf7;
+  border-radius: 8px;
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #222;
+}
+.subtitle {
+  color: #6db33f;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+.desc {
+  color: #222;
+  margin-bottom: 1.5rem;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.input {
+  padding: 0.7rem;
+  border: 1px solid #b5d6b3;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.button {
+  background: #6db33f;
+  color: #fff;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.button:hover {
+  background: #558f2f;
+}
