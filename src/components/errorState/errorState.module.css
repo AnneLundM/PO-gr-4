@@ -1,0 +1,96 @@
+.errorState {
+    background: #f7faf7;
+    border: 1px solid #b5d6b3;
+    border-radius: 8px;
+    padding: 2rem 1rem;
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* variant overrides */
+.error {
+    border-color: #e07070;
+    background: #fff5f5;
+}
+
+.empty {
+    border-color: #b5d6b3;
+    background: #f7faf7;
+}
+
+.notFound {
+    border-color: #b5d6b3;
+    background: #f7faf7;
+}
+
+.errorIcon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: #6db33f;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error .errorIcon {
+    background: #c0392b;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #6db33f;
+    margin: 0;
+}
+
+.error .title {
+    color: #c0392b;
+}
+
+.message {
+    color: #222;
+    margin: 0;
+}
+
+.retryButton {
+    background: #6db33f;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.4rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 0.5rem;
+}
+
+.retryButton:hover:not(:disabled) {
+    background: #558f2f;
+}
+
+.retryButton:disabled {
+    background: #b5d6b3;
+    cursor: not-allowed;
+}
+
+.cooldownText {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.25rem;
+}

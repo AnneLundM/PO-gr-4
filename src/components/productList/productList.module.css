@@ -139,3 +139,21 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* #15 — cart feedback melding */
+.cartMessage {
+    background: #f0f8e8;
+    border: 1px solid #b5d6b3;
+    color: #3a6b0f;
+    border-radius: 8px;
+    padding: 10px 20px;
+    text-align: center;
+    margin-bottom: 16px;
+    width: 100%;
+    max-width: 500px;
+    align-self: center;
+}
+
+.cartMessage strong {
+    font-weight: 700;
+}

@@ -62,3 +62,30 @@
 .button:hover {
   background: #558f2f;
 }
+
+.label {
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.successMessage {
+  background: #f0f8e8;
+  border: 1px solid #b5d6b3;
+  color: #3a6b0f;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.errorMessage {
+  background: #fff3f3;
+  border: 1px solid #f5c6c6;
+  color: #b00020;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  text-align: center;
+}

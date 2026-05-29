@@ -9,30 +9,32 @@ const Footer = () => (
       <img src="/src/assets/sponsors/04.png" alt="Certifikat 4" />
       <img src="/src/assets/sponsors/05.png" alt="Certifikat 5" />
     </div>
-    <div className={styles.top}>
+      <div className={styles.top}>
       <div className={styles.about}>
-        <img
-          src="/src/assets/backgrounds/logo.png"
-          alt="Grovila logo"
-          className={styles.logo}
-        />
+        <a href="/" onClick={() => window.scrollTo(0, 0)}>
+          <img
+            src="/src/assets/backgrounds/logo.png"
+            alt="Gowala logo"
+            className={styles.logo}
+          />
+        </a>
         <p>
-          Grovila Farms er en dedikeret gård, der producerer friske
+          Gowala Farms er en dedikeret gård, der producerer friske
           mejeriprodukter og kvalitetskød med fokus på dyrevelfærd,
           håndværkstradition og autentisk smag.
         </p>
         <ul className={styles.contact}>
-          <li>+45(0) 289-745-6987</li>
-          <li>+456-546-532</li>
+          <li>+88130-589-745-6987</li>
+          <li>+1655-546-532</li>
           <li>
             Man - Fre 09:00 - 18:00
             <br />
             (undtagen helligdage)
           </li>
           <li>
-            Mejerivej 14
+            Mejerigade 14
             <br />
-            Mølleby
+            Mejeby
           </li>
         </ul>
       </div>

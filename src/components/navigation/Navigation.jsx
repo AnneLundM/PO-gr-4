@@ -1,7 +1,12 @@
 import "./Navigation.css";
 import logo from "../../assets/backgrounds/logo.png";
+import { Basket3 } from "react-bootstrap-icons";
+import { useNavigate } from "react-router";
+import { useCart } from "../../hooks/useCart";
 
 export default function Navigation() {
+  const navigate = useNavigate();
+  const { cartCount } = useCart();
   return (
     <header className="header">
       <div className="header-container">
@@ -25,10 +30,10 @@ export default function Navigation() {
             Services
           </a>
           <a href="#our" className="nav-link">
-            Our
+            Om
           </a>
           <a href="#contact" className="nav-link">
-            Contact
+            Kontakt
           </a>
           <a href="#checkout" className="nav-link">
             Checkout
@@ -36,9 +41,12 @@ export default function Navigation() {
         </nav>
 
         {/* Cart Icon */}
-        <div className="header-user">
-          <button className="user-icon-btn" aria-label="Cart">
-            🛒
+        <div className="header-buy">
+          <button className="cart-btn" onClick={() => navigate("/checkout")} aria-label="Gå til kurv">
+            <div className="cart-icon-wrapper">
+              <Basket3 size={34} color="#5E9A13" />
+              <span className="cart-badge">{cartCount}</span>
+            </div>
           </button>
         </div>
       </div>
