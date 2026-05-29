@@ -63,5 +63,7 @@ ul {
     margin-bottom: 86px;
   }
 
- 
+  .header > * {
+    max-width: 100%;
+  }
 }
