@@ -3,6 +3,7 @@ import ErrorState from "../errorState/ErrorState"; // #15 — ny import
 import styles from "./productList.module.css"
 import { useEffect, useState } from "react";
 import { fetchJson } from "../../utils/api"; // #15 — ny import (delt fetch-helper)
+import { useCart } from "../../hooks/useCart"; // #15 — cart hook
 
 export default function ProductList() {
     const [products, setProducts] = useState([]);
@@ -10,8 +11,17 @@ export default function ProductList() {
     const [error, setError] = useState(null);
     const [carouselIndex, setCarouselIndex] = useState(0);
     const [retryCount, setRetryCount] = useState(0); // #15 — ny state til retry-logik
+    const [cartMessage, setCartMessage] = useState(""); // #15 — cart feedback
+
+    const { addToCart } = useCart(); // #15 — cart hook
 
     function handleRetry() { setRetryCount(c => c + 1); } // #15 — ny funktion
+
+    function handleAddToCart(product) { // #15 — tilføj til kurv
+        addToCart(product);
+        setCartMessage(`${product.title} er tilføjet til kurven!`);
+        setTimeout(() => setCartMessage(""), 3000);
+    }
 
     // #15 — fetchProducts er flyttet ind i useEffect (fix af lint-fejl)
     // #15 — tilføjet setError(null), fetchJson i stedet for fetch(), array-guard og console.error
@@ -81,6 +91,11 @@ export default function ProductList() {
 
     return (
       <div className={styles.wrapper}>
+        {cartMessage && ( // #15 — cart feedback melding
+            <p role="status" aria-live="polite" className={styles.cartMessage}>
+                <strong>{cartMessage}</strong>
+            </p>
+        )}
         <div className={styles.headerWrapper}>
           <h2>Vores Produkter</h2>
           <h3>Vi har udvalgt de bedste produkter</h3>
@@ -105,7 +120,7 @@ export default function ProductList() {
                   />
                   <h3 className={styles.pTitle}>{product.title}</h3>
                   <p className={styles.pPrice}>{product.price},-</p>
-                  <Button icon={true} text="Tilføj til kurv" />
+                  <Button icon={true} text="Tilføj til kurv" onClick={() => handleAddToCart(product)} />
                 </div>
               );
             })}

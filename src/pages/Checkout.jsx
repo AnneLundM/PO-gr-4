@@ -1,28 +1,53 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import styles from "./checkout.module.css";
 import pageHeader from "../assets/backgrounds/page_header_01.jpg";
-
-// Mock cart item — replace with real cart state when basket feature is built
-const MOCK_ITEM = { title: "Gowala Parmasan", price: 89, image: "https://gowala-t3pes.ondigitalocean.app//products/parmasan.jpg" };
+import { useCart } from "../hooks/useCart";
 
 export default function Checkout() {
-    const [quantity, setQuantity] = useState(1);
+    const { cartItems, addToCart, decreaseQuantity, removeFromCart, clearCart, cartTotal } = useCart();
     const [email, setEmail] = useState("");
     const [submitted, setSubmitted] = useState(false);
-
-    const total = MOCK_ITEM.price * quantity;
+    const navigate = useNavigate();
 
     function handleSubmit(e) {
         e.preventDefault();
         if (!email) return;
+        clearCart();
         setSubmitted(true);
     }
 
     if (submitted) return (
         <div className={styles.wrapper}>
+            <div className={styles.pageHeader}>
+                <h2>Gowala shopping</h2>
+                <p>Færdiggør din bestilling</p>
+            </div>
             <div className={styles.confirmation}>
                 <h2>Tak for din bestilling!</h2>
                 <p>Vi sender en bekræftelse til <strong>{email}</strong>.</p>
+            </div>
+        </div>
+    );
+
+    if (cartItems.length === 0) return (
+        <div className={styles.wrapper}>
+            <div className={styles.pageHeader}>
+                <h2>Gowala shopping</h2>
+                <p>Færdiggør din bestilling</p>
+            </div>
+            <img className={styles.heroImg} src={pageHeader} alt="Gowala Farms landskab" />
+            <div className={styles.emptyCart}>
+                <p className={styles.emptyIcon}>🛒</p>
+                <h3>Din kurv er tom</h3>
+                <p>Du har ikke tilføjet nogen produkter endnu.</p>
+                <button
+                    type="button"
+                    className={styles.submitBtn}
+                    onClick={() => navigate("/products")}
+                >
+                    Gå til shop
+                </button>
             </div>
         </div>
     );
@@ -31,7 +56,7 @@ export default function Checkout() {
         <div className={styles.wrapper}>
             <div className={styles.pageHeader}>
                 <h2>Gowala shopping</h2>
-                <p>Færdiggor din bestilling</p>
+                <p>Færdiggør din bestilling</p>
             </div>
 
             <img className={styles.heroImg} src={pageHeader} alt="Gowala Farms landskab" />
@@ -41,41 +66,43 @@ export default function Checkout() {
                 <p className={styles.subtitle}>Udfyld venligst formularen herunder</p>
 
                 <form className={styles.orderForm} onSubmit={handleSubmit}>
-                    <div className={styles.orderItem}>
-                        <img src={MOCK_ITEM.image} alt={MOCK_ITEM.title} className={styles.itemImg} />
-                        <div className={styles.itemInfo}>
-                            <p className={styles.itemTitle}>{MOCK_ITEM.title}</p>
-                            <p className={styles.itemPrice}>{MOCK_ITEM.price},-</p>
-                            <div className={styles.qtyControls}>
-                                <button
-                                    type="button"
-                                    onClick={() => setQuantity(q => Math.max(1, q - 1))}
-                                    aria-label="Færre"
-                                >−</button>
-                                <span>{quantity}</span>
-                                <button
-                                    type="button"
-                                    onClick={() => setQuantity(q => q + 1)}
-                                    aria-label="Flere"
-                                >+</button>
+                    {cartItems.map(item => (
+                        <div key={item._id} className={styles.orderItem}>
+                            <img src={item.image} alt={item.title} className={styles.itemImg} />
+                            <div className={styles.itemInfo}>
+                                <p className={styles.itemTitle}>{item.title}</p>
+                                <p className={styles.itemPrice}>{item.price},-</p>
+                                <div className={styles.qtyControls}>
+                                    <button
+                                        type="button"
+                                        onClick={() => decreaseQuantity(item._id)}
+                                        aria-label="Færre"
+                                    >−</button>
+                                    <span>{item.quantity}</span>
+                                    <button
+                                        type="button"
+                                        onClick={() => addToCart(item)}
+                                        aria-label="Flere"
+                                    >+</button>
+                                </div>
                             </div>
+                            <button
+                                type="button"
+                                className={styles.removeBtn}
+                                onClick={() => removeFromCart(item._id)}
+                                aria-label="Fjern"
+                            >×</button>
                         </div>
-                        <button
-                            type="button"
-                            className={styles.removeBtn}
-                            onClick={() => setQuantity(1)}
-                            aria-label="Fjern"
-                        >×</button>
-                    </div>
+                    ))}
 
                     <div className={styles.totals}>
                         <div className={styles.totalRow}>
                             <span>Total</span>
-                            <span>{total},-</span>
+                            <span>{cartTotal},-</span>
                         </div>
                         <div className={styles.totalRow}>
                             <span>I alt</span>
-                            <strong>{total}.00,-</strong>
+                            <strong>{cartTotal}.00,-</strong>
                         </div>
                     </div>
 

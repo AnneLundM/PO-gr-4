@@ -1,7 +1,3 @@
-// TODO (#15 / #12): when this page fetches from the API, use ErrorState like this:
-// import ErrorState from "../components/errorState/ErrorState";
-// if (error) return <ErrorState title="..." message="..." actionText="Prøv igen" onRetry={fetchProducts} />;
-
 import { useEffect, useState } from "react";
 import ErrorState from "../components/errorState/ErrorState";
 import Button from "../components/button/Button";

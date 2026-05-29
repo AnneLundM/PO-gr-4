@@ -1,18 +1,36 @@
-// eslint-disable-next-line no-unused-vars
-import { Link, Links, useNavigate } from "react-router"
-// eslint-disable-next-line no-unused-vars
+import { useNavigate } from "react-router"
+import { Basket3 } from "react-bootstrap-icons"
 import styles from "./button.module.css"
-import { Cart } from "react-bootstrap-icons"
 
-export default function Button({icon, text, onClick, path}) {
+export default function Button({
+    icon = false,
+    text,
+    onClick,
+    path,
+    type = "button",
+    disabled = false,
+    ariaLabel,
+}) {
+    const navigate = useNavigate()
 
-    let navigate = useNavigate()
+    function handleClick() {
+        if (path) {
+            navigate(`/${path}`)
+        } else if (onClick) {
+            onClick()
+        }
+    }
 
-    return(
-        <button onClick={path ? () => navigate(`/${path}`) : onClick}>
-            {icon && <Cart />}
+    return (
+        <button
+            className={styles.button}
+            onClick={handleClick}
+            type={type}
+            disabled={disabled}
+            aria-label={ariaLabel}
+        >
+            {icon && <Basket3 size={16} />}
             <p>{text}</p>
         </button>
     )
-
 }
