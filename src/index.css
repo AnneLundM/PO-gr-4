@@ -1,3 +1,7 @@
+:root {
+  font-family: "Frank Ruhl Libre", serif;
+}
+
 *,
 *::before,
 *::after {
@@ -12,5 +16,5 @@ ol {
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
