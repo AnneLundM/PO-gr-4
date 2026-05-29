@@ -1,7 +1,8 @@
+import AllProducts from "../components/allProducts/AllProducts";
 
 export default function Products() {
 
     return (
-        <h1>Products</h1>
+        <AllProducts/>
     )
 }

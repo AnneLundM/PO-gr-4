@@ -3,7 +3,6 @@ import styles from "./productList.module.css"
 import { useEffect, useState } from "react";
 
 export default function ProductList() {
-    let active = true
 
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -64,7 +63,7 @@ export default function ProductList() {
         </div>
         <div className={styles.productsWrapper}>
           <div className={styles.productsGrid}>
-            {products.slice(0, 4).map((product) => {
+            {products.map((product) => {
               return (
                 <div key={product.id} className={styles.pCard}>
                   {product.discount > 5 && (
