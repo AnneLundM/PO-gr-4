@@ -23,11 +23,13 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, [isAutoPlay, slides.length]);
 
+  // eslint-disable-next-line no-unused-vars
   const handlePrevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
     setIsAutoPlay(true);
   };
 
+  // eslint-disable-next-line no-unused-vars
   const handleNextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
     setIsAutoPlay(true);
