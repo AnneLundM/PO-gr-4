@@ -10,7 +10,7 @@ export default function Services() {
       </div>
       <ul>
         {cards.map((card, index) => (
-          <li key={index}>
+          <li className={s.item} key={index}>
             <img src={"./src/assets/cards/" + card.img} />
             <h2>{card.titl}</h2>
             <p>{card.desc}</p>
