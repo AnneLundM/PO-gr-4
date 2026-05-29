@@ -1,9 +1,26 @@
 .newsletterSection {
-  background: #f7faf7;
+  position: relative;
+  overflow: hidden;
   border-radius: 8px;
   padding: 2rem 1rem;
   text-align: center;
   margin-bottom: 2rem;
+  background: #f7faf7;
+}
+
+.newsletterSection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: url("/src/assets/backgrounds/blob_01.jpg") center/cover no-repeat;
+  filter: blur(8px) brightness(0.9);
+  opacity: 0.7;
+}
+
+.newsletterSection > * {
+  position: relative;
+  z-index: 1;
 }
 .title {
   font-size: 2rem;
