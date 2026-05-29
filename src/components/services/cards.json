@@ -1,0 +1,17 @@
+[
+  {
+    "titl": "Farmens teknologi",
+    "desc": "Vores avancerede teknologi kombinerer effektivitet med høj hygiejnestandard, hvilket garanterer produkter af den bedste kvalitet.",
+    "img": "01.png"
+  },
+  {
+    "titl": "Farmens landmænd",
+    "desc": "Landmændene hos Gowala Farms er dedikeret til dyrevelfærd og bæredygtigt landbrug, hvor omsorg for køerne altid kommer i første række.",
+    "img": "02.png"
+  },
+  {
+    "titl": "Fra mejeriet til forbrugeren",
+    "desc": "Transporten fra mejeriet til butikken foregår hurtigt og skånsomt for at bevare produkternes friskhed og kvalitet.",
+    "img": "03.png"
+  }
+]

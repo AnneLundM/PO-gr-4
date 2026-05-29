@@ -1,4 +1,5 @@
 import ProductList from "../components/productList/ProductList";
+import Services from "../components/services/services";
 import Newsletter from "../components/newsletter/Newsletter";
 // eslint-disable-next-line no-unused-vars
 import Footer from "../components/footer/Footer";
@@ -8,6 +9,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <Services />
       <ProductList />
       <Newsletter />
     </>
