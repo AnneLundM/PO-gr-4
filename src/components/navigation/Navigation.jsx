@@ -10,7 +10,13 @@ export default function Navigation() {
       <div className="header-container">
         {/* Logo */}
         <div className="header-logo">
-          <img src={logo} alt="Gowala Logo" className="logo-image" />
+          <a
+            href="/"
+            className="logo-link"
+            onClick={() => window.scrollTo(0, 0)}
+          >
+            <img src={logo} alt="Gowala Logo" className="logo-image" />
+          </a>
         </div>
 
         {/* Navigation Menu */}
