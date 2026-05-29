@@ -2,12 +2,23 @@ import styles from "./allProducts.module.css"
 import { Filter } from "react-bootstrap-icons";
 import Button from "../button/Button";
 import { useState, useEffect } from "react";
+import { useCart } from "../../hooks/useCart";
 
 export default function AllProducts() {
 
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [cartMessage, setCartMessage] = useState("");
+
+    const { addToCart } = useCart();
+
+    function handleAddToCart(product) {
+      // #15 — tilføj til kurv
+      addToCart(product);
+      setCartMessage(`${product.title} er tilføjet til kurven!`);
+      setTimeout(() => setCartMessage(""), 3000);
+    }
 
     async function fetchProducts() {
 

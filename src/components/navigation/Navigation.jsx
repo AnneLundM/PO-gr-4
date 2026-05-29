@@ -26,16 +26,16 @@ export default function Navigation() {
           <a href="shop" className="nav-link">
             Shop
           </a>
-          <a href="#services" className="nav-link">
+          <a href="services" className="nav-link">
             Services
           </a>
-          <a href="#our" className="nav-link">
+          <a href="our" className="nav-link">
             Om
           </a>
-          <a href="#contact" className="nav-link">
+          <a href="contact" className="nav-link">
             Kontakt
           </a>
-          <a href="#checkout" className="nav-link">
+          <a href="checkout" className="nav-link">
             Checkout
           </a>
         </nav>
