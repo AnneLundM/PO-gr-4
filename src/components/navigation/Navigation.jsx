@@ -23,7 +23,7 @@ export default function Navigation() {
 
         {/* Navigation Menu */}
         <nav className="nav-menu">
-          <a href="#shop" className="nav-link">
+          <a href="shop" className="nav-link">
             Shop
           </a>
           <a href="#services" className="nav-link">

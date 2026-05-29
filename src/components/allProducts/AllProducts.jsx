@@ -61,7 +61,11 @@ export default function AllProducts() {
                   />
                   <h3 className={styles.pTitle}>{product.title}</h3>
                   <p className={styles.pPrice}>{product.price},-</p>
-                  <Button icon={true} text="Tilføj til kurv" />
+                  <Button
+                    icon={true}
+                    text="Tilføj til kurv"
+                    onClick={() => handleAddToCart(product)}
+                  />
                 </div>
               );
             })}

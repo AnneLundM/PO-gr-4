@@ -6,10 +6,6 @@ import { fetchJson } from "../../utils/api"; // #15 — ny import (delt fetch-he
 import { useCart } from "../../hooks/useCart"; // #15 — cart hook
 
 export default function ProductList() {
-<<<<<<< HEAD
-
-=======
->>>>>>> main
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -110,12 +106,8 @@ export default function ProductList() {
         </div>
         <div className={styles.productsWrapper}>
           <div className={styles.productsGrid}>
-<<<<<<< HEAD
-            {products.map((product) => {
-=======
             {/* #15 — key ændret fra product.id til product._id (API bruger _id) */}
             {products.slice(0, 4).map((product, index) => {
->>>>>>> main
               return (
                 <div key={product._id ?? index} className={styles.pCard}>
                   {product.discount > 5 && (
